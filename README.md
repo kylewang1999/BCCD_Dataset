@@ -1,30 +1,24 @@
 # BCCD Dataset
 
-BCCD Dataset is a small-scale dataset for blood cells detection.
+> More info about this dataset can be found in the: [Original Repo](https://github.com/Shenggan/BCCD_Dataset#readme)
 
-Thanks the original data and annotations from [cosmicad](https://github.com/cosmicad/dataset) and [akshaylamba](https://github.com/akshaylamba/all_CELL_data). The original dataset is re-organized into VOC format. BCCD Dataset is under *[MIT licence](./LICENSE)*.
+> This version reorganized the original dataset according to WBC types ('EOSINOPHIL','LYMPHOCYTE', 'MONOCYTE', 'NEUTROPHIL', 'BASOPHIL') 
 
-You can [download](https://github.com/Shenggan/BCCD_Dataset/releases) the `.rec` format for mxnet directly. The `.rec` file can be load by [mxnet.image.ImageDetIter](http://mxnet.incubator.apache.org/api/python/image/image.html?highlight=imagedetiter#mxnet.image.ImageDetIter).
-
-### Data preparation
-Data preparation is important to use machine learning. In this project, the Faster R-CNN algorithm from [keras-frcnn](https://github.com/kbardool/keras-frcnn) for Object Detection is used.
-From this [dataset](https://github.com/Shenggan/BCCD_Dataset), [nicolaschen1](https://github.com/nicolaschen1) developed two Python scripts to make preparation data (CSV file and images) for recognition of abnormalities in blood cells on medical images.
-
-- export.py: it creates the file "test.csv" with all data needed: filename, class_name, x1,y1,x2,y2.
-- plot.py: it plots the boxes for each image and save it in a new directory.
-
-#### Overview of dataset
-
-* You can see a example of the labeled cell image.
-
-  We have three kind of labels :
-
-  * RBC (Red Blood Cell)
-  * WBC (White Blood Cell)
-  * Platelets (血小板)
-
-  ![example](./example.jpg)
-
+* The structure of `BCCD_410`
+  ```
+    .
+    +---BASOPHIL
+    |  +--- 3   '*.jpg' images
+    +---EOSINOPHIL
+    |  +--- 87  '*.jpg' images
+    +---LYMPHOCYTE
+    |  +--- 33  '*.jpg' images
+    +---MONOCYTE
+    |  +--- 20  '*.jpg' images
+    +---NEUTROPHIL
+    |  +--- 205 '*.jpg' images
+  ```
+  
 
 * The structure of the `BCCD_dataset`
 
